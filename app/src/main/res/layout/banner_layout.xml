@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/banner_card"
+    style="@style/Component.BannerCard.CardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_l"
+    tools:backgroundTint="@color/background_blue_dark">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/banner_tittle"
+            style="@style/Typography.Title.H2.ColorInverted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:layout_constraintEnd_toStartOf="@+id/close_banner_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Тариф «Взлёт»" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/banner_description"
+            style="@style/Typography.Caption.Medium.Tight.ColorInverted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="@+id/banner_tittle"
+            app:layout_constraintStart_toStartOf="@+id/banner_tittle"
+            app:layout_constraintTop_toBottomOf="@+id/banner_tittle"
+            tools:text="Ускорь свой интернет \n до 330 Мбит/с, чтобы использовать \n технологии на максимум" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/banner_more_text"
+            style="@style/Typography.Caption.Medium.Tight.ColorInverted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:text="@string/banner_view_more_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/banner_description"
+            app:layout_constraintStart_toStartOf="@+id/banner_description"
+            app:layout_constraintTop_toBottomOf="@+id/banner_description" />
+
+        <ImageButton
+            android:id="@+id/close_banner_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/banner_view_card_image_description"
+            android:padding="@dimen/spacing_l"
+            android:scaleType="fitCenter"
+            android:src="@drawable/banner_close_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/banner_view_background_image_description"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/close_banner_button"
+            app:layout_constraintVertical_bias="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

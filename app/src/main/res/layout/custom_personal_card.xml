@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/custom_personal_card"
+    style="@style/Component.PersonalCard.CardStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:layout_margin="@dimen/spacing_l">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/personal_card_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/spacing_m">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/address_label"
+            style="@style/Typography.Caption.Medium.Tight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_l"
+            android:layout_marginTop="@dimen/spacing_l"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/colorBackgroundInverted"
+            android:textSize="@dimen/font_size_s"
+            app:layout_constraintEnd_toStartOf="@+id/personal_card_barrier"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="г. Челябинск, ул. Степана Разина, д. 236, кв. 15" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/personal_account_label"
+            style="@style/Typography.Caption.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:text="@string/personal_account_label"
+            android:textColor="@color/colorTextTertiary"
+            android:textSize="@dimen/font_size_s"
+            app:layout_constraintEnd_toStartOf="@+id/personal_card_barrier"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/address_label"
+            app:layout_constraintTop_toBottomOf="@+id/address_label" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/network_status_label"
+            style="@style/Typography.Caption.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_m"
+            android:paddingBottom="@dimen/spacing_m"
+            android:text="@string/personal_status_label"
+            android:textColor="@color/colorTextTertiary"
+            android:textSize="@dimen/font_size_s"
+            app:layout_constraintStart_toStartOf="@id/address_label"
+            app:layout_constraintTop_toBottomOf="@+id/personal_account_label" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/network_status_text"
+            style="@style/Typography.Caption.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_m"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingBottom="@dimen/spacing_m"
+            android:textSize="@dimen/font_size_s"
+            app:layout_constraintBottom_toBottomOf="@+id/network_status_label"
+            app:layout_constraintEnd_toStartOf="@+id/personal_card_barrier"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/network_status_label"
+            app:layout_constraintTop_toTopOf="@+id/network_status_label"
+            tools:text="Все отлично" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/change_contract_label"
+            style="@style/Typography.Caption.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_contract_label"
+            android:textColor="@color/colorTextBlue"
+            android:textSize="@dimen/font_size_s"
+            app:layout_constraintEnd_toStartOf="@+id/personal_card_barrier"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/network_status_label"
+            app:layout_constraintTop_toBottomOf="@+id/network_status_label" />
+
+        <ImageButton
+            android:id="@+id/personal_card_arrow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_l"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/spacing_l"
+            android:scaleType="fitCenter"
+            android:src="@drawable/custom_personal_card_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/change_contract_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@+id/personal_card_status_icon"
+            app:layout_constraintTop_toTopOf="@+id/change_contract_label" />
+
+        <ImageView
+            android:id="@+id/personal_card_status_icon"
+            android:layout_width="@dimen/personal_account_status_network_icon_size"
+            android:layout_height="@dimen/personal_account_status_network_icon_size"
+            android:layout_marginEnd="@dimen/spacing_l"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintTop_toTopOf="@id/address_label"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/personal_card_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="start"
+            app:constraint_referenced_ids="personal_card_arrow_button, personal_card_status_icon" />
+
+        <View
+            android:id="@+id/status_area"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/change_contract_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personal_account_label" />
+
+        <View
+            android:id="@+id/contract_area"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/status_area" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/contract_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="personal_card_arrow_button, change_contract_label"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/card_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="personal_card_status_icon, network_status_text,
+            network_status_label, personal_account_label, address_label"
+            tools:visibility="visible" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include layout="@layout/custom_personal_card_shimmer_layout" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
